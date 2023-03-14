@@ -1,3 +1,5 @@
+<!-- Escribe un script PHP que muestre la tabla de multiplicar de un número aleatorio. Utiliza un bucle for -->
+
 <?php
 
 // Generamos número aleatorio entre 1 y 10

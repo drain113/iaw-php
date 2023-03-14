@@ -1,11 +1,14 @@
+<!-- 5. Escribe un script PHP que muestre las tablas de multiplicar del 1 al 10. Utiliza un bucle for -->
+
 <?php
 
-for ($numero = 1; $numero <= 10; $numero++) {
+while($numero <= 10) {
 
 echo "<h2> Tabla del $numero </h2>";
-
 echo "<table border='1'>";
-for ($i = 1; $i <= 10; $i++) {
+
+$i = 1;
+while($i <= 10) {
     $resultado = $numero * $i;
     echo "<tr>";
     echo "<td>$numero</td>";
@@ -13,10 +16,12 @@ for ($i = 1; $i <= 10; $i++) {
     echo "<td>$i</td>";
     echo "<td>=</td>";
     echo "<td>$resultado </td>";
-    echo "</tr>";    
+    echo "</tr>";
+    $i++;    
 }
 
 echo "</table>";
+$numero++;
 
 }
 ?>
