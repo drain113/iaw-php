@@ -8,3 +8,34 @@
 El array de temperaturas lo vamos a generar con números aleatorios. El array será de 10 elementos y los valores aletorios generados estarán entre 1 y 30. -->
 
 <!-- 7. Resuelva el ejercicio utilizando bucles do-while. -->
+
+<?php
+
+    $temp = array();
+
+    $i = 0;
+    do {
+         $temp[$i] = rand(1,30);
+         $i++;
+
+    } while ( $i <= 10 );
+
+    echo "<table border='1'>";
+    $i = 0;
+    do {
+       echo "<td>$temp[$i]</td>";
+       $i++;
+    } while ( $i <= 10 );
+
+    echo "</tr>";
+    echo "</table>";    
+    
+    $total = array_sum($temp) / 10;
+
+    echo "<br>";   
+    echo "Media = $total";
+    echo "<br>";
+    echo "Valor Máximo = ", max($temp);
+    echo "<br>";
+    echo "Valor Minimo= ", min($temp);
+?>
