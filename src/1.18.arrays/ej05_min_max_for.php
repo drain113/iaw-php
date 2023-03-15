@@ -14,7 +14,7 @@ El array de temperaturas lo vamos a generar con números aleatorios. El array se
     $temp = array();
 
     for ($i = 0; $i < 10; $i++ ) {
-         $temp[$i] = rand(1,30);   
+         $temp[$i] = rand(1,5);   
     }
 
     echo "<table border='1'>";
@@ -29,33 +29,50 @@ El array de temperaturas lo vamos a generar con números aleatorios. El array se
     $max_val = $temp[0];
     $min_val = $temp[0];
 
-    $max_pos = 0;
-    $min_pos = 0;
+
 
     for ($i = 1; $i < 10; $i++ ) {
 
         if ($temp[$i] > $max_val) {
             $max_val = $temp[$i];
-            $max_pos = $i+1;
         }
 
         if ($temp[$i] < $min_val) {
             $min_val = $temp[$i];
-            $min_pos = $i+1;
         }
 
     }
 
+    $max_pos = array();
+    $min_pos = array();
+
+    $ne_max = 0;
+    $ne_min = 0;
+
+    for ($i = 1; $i < 10; $i++ ) {
+
+        if ($temp[$i] == $max_val) {
+            $max_pos[$ne_max] = $i+1;
+            $ne_max=$ne_max+1;
+        }
+
+        if ($temp[$i] == $min_val) {
+            $min_pos[$ne_min] = $i+1;
+            $ne_min=$ne_min+1;
+
+    }
+
+}
     echo "<br>";   
     echo "Media = $total";
     echo "<br>";
     echo "Valor Máximo = ", max($temp);
     echo "<br>";
-    echo "Posición Máximo = ", $max_pos;
+    echo "Posición Máximo = ", print_r($max_pos);
     echo "<br>";
     echo "Valor Minimo = ", min($temp);
     echo "<br>";
-    echo "Posición Mínimo = ", $min_pos;
+    echo "Posición Mínimo = ", print_r($min_pos);
 
 ?>
 
